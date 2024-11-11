@@ -1,0 +1,10 @@
+# render.yaml
+
+services:
+  - name: study_pro  # Name of your web service
+    region: oregon-us-west  # Region where your service runs
+    buildCommand: pip install -r requirements.txt  # Command to install dependencies
+    startCommand: gunicorn app:app  # Command to start your Flask app
+    healthCheckPath: /healthz  # Path for health checks
+   
+    automaticDeploy: true  # Enable automatic deployment on push
